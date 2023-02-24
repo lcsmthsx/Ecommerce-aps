@@ -2,12 +2,16 @@ import Link from 'next/link';
 import GeneralCard from '@/components/generalCard';
 import Input from '@/components/input';
 import Button from '@/components/button';
-import { BsFacebook, BsGoogle, BsTwitch } from 'react-icons/bs';
+
 export default function LoginPage() {
   return (
     <div className='min-h-screen flex justify-center items-center'>
       <GeneralCard title='Login'>
         <form className=' flex flex-col gap-4 text-left'>
+          <label htmlFor='nome' className='text-sm'>
+            Nome:
+            <Input id='nome' type='text' placeholder='Seu nome' />
+          </label>
           <label htmlFor='email' className='text-sm'>
             E-mail:
             <Input id='email' type='text' placeholder='Endereço@dominio.com' />
@@ -16,17 +20,9 @@ export default function LoginPage() {
             Password:
             <Input id='password' type='password' placeholder='Password' />
           </label>
-          <Button>Entrar</Button>
-          <div className='flex flex-wrap gap-5 justify-center items-center'>
-            <label htmlFor='' className='text-sm'>
-              Entre com:
-            </label>{' '}
-            <BsFacebook className='scale-150' />
-            <BsGoogle className='scale-150' />
-            <BsTwitch className='scale-150' />
-          </div>
-          <Link href='/cadastro' className='text-xs text-center'>
-            Não possui conta? Clique aqui
+          <Button>Cadastrar</Button>
+          <Link href='/login' className='text-xs text-center'>
+            Ja possui uma conta? Clique aqui
           </Link>
         </form>
       </GeneralCard>

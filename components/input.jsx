@@ -1,5 +1,10 @@
-export default function Input({ placeholder, props }) {
+export default function Input({ type, placeholder, props }) {
   return (
-    <input className='rounded-lg p-1 ' placeholder={placeholder} {...props} />
+    <input
+      className='rounded-md p-1 w-full'
+      type={type}
+      placeholder={placeholder}
+      {...props}
+    />
   );
 }

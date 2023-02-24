@@ -7,7 +7,13 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      primary: 'Poppins',
+      primary: ['var(--font-poppins)'],
+    },
+    fontWeight: {
+      normal: 400,
+      medium: 500,
+      semiBold: 600,
+      bold: 700,
     },
     container: {
       padding: {
@@ -23,12 +29,15 @@ module.exports = {
     },
     extend: {
       colors: {
+        back: '#12141E',
         primary: '#4F4F4F',
         secondary: '#414141',
         text1: '#666666',
+        indig: '#4B0082',
       },
       backgroundImage: {
         hero: "url('./img/bg_hero.svg')",
+        modern: "url('../public/modern.png')",
       },
     },
   },

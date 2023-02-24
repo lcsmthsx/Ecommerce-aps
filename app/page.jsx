@@ -1,3 +1,3 @@
-export default function Home(second) {
+export default function Home() {
   return <div className='min-h-screen text-center'>HELLO NEXT</div>;
 }
