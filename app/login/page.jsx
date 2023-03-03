@@ -25,9 +25,12 @@ export default function LoginPage() {
             <BsGoogle className='scale-150' />
             <BsTwitch className='scale-150' />
           </div>
-          <Link href='/cadastro' className='text-xs text-center'>
-            Não possui conta? Clique aqui
-          </Link>
+          <div className='text-xs text-center'>
+            <p>Não possui conta? </p>
+            <Link href='/cadastro' className=''>
+              Clique aqui
+            </Link>
+          </div>
         </form>
       </GeneralCard>
     </div>
