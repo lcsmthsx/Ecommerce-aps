@@ -1,27 +1,53 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import GeneralCard from '@/components/generalCard';
-import Input from '@/components/input';
-import Button from '@/components/button';
 
-export default function LoginPage() {
+export default function CadastroPage() {
+  const { register, handleSubmit } = useForm();
+  function onSub(data) {
+    console.log(data);
+  }
+
   return (
-    <div className='min-h-screen flex justify-center items-center'>
-      <GeneralCard title='Login'>
-        <form className=' flex flex-col gap-4 text-left'>
-          <label htmlFor='nome' className='text-sm'>
+    <div className="min-h-screen flex justify-center items-center">
+      <GeneralCard title="Cadastro">
+        <form
+          onSubmit={handleSubmit(onSub)}
+          className="flex flex-col gap-4 text-left"
+        >
+          <label htmlFor="nome" className="text-sm">
             Nome:
-            <Input id='nome' type='text' placeholder='Seu nome' />
+            <input
+              id="nome"
+              type="text"
+              placeholder="Seu nome"
+              required
+              {...register('name')}
+            />
           </label>
-          <label htmlFor='email' className='text-sm'>
+          <label htmlFor="email" className="text-sm">
             E-mail:
-            <Input id='email' type='text' placeholder='Endereço@dominio.com' />
+            <input
+              id="email"
+              type="text"
+              placeholder="Endereço@dominio.com"
+              required
+              {...register('email')}
+            />
           </label>
-          <label htmlFor='password' className='text-sm'>
+          <label htmlFor="password" className="text-sm">
             Password:
-            <Input id='password' type='password' placeholder='Password' />
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              {...register('password')}
+            />
           </label>
-          <Button>Cadastrar</Button>
-          <Link href='/login' className='text-xs text-center'>
+          <button type="submit">Cadastrar</button>
+          <Link href="/login" className="text-xs text-center">
             Ja possui uma conta? Clique aqui
           </Link>
         </form>
